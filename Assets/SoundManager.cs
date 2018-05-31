@@ -31,7 +31,6 @@ public class SoundManager : MonoBehaviour
 
             }
             Destroy(gameObject);
-            Debug.LogError("Destroyed");
         }
         //Set SoundManager to DontDestroyOnLoad so that it won't be destroyed when reloading our scene.
         DontDestroyOnLoad(gameObject);

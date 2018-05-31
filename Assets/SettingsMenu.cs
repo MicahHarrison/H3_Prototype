@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SettingsMenu : MonoBehaviour {
 
@@ -12,9 +13,12 @@ public class SettingsMenu : MonoBehaviour {
 
     Resolution[] resolutions;
 
+    int changed = 0;
+
     // Use this for initialization
     void Start()
     {
+        Debug.Log(changed);
         resolutions = Screen.resolutions;
         resolutionDrop.ClearOptions();
         List<string> options = new List<string>();
@@ -36,11 +40,13 @@ public class SettingsMenu : MonoBehaviour {
     }
     public void SetResolution(int resindex)
     {
+        changed++;
         Debug.Log(resindex);
         Resolution res = resolutions[resindex];
         Screen.SetResolution(res.width, res.height, Screen.fullScreen);
     }
-    
+   
+
     public void SetVolume (float volume) {
         Debug.Log(volume);
         audio.SetFloat("volume", volume);
