@@ -50,10 +50,10 @@ public class SettingsMenu : MonoBehaviour {
         Debug.Log(quality);
         QualitySettings.SetQualityLevel(quality);
     }
-    public void SetFullScreen(bool isfull)
+    public void SetFullScreen()
     {
-        Debug.Log(isfull);
-        Screen.fullScreen = isfull;
+        Debug.Log(Screen.fullScreen);
+        Screen.fullScreen = !Screen.fullScreen;
     }
 
 }

@@ -51,7 +51,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\DontDestroy.cs" />
+     <Compile Include="Assets\Fading.cs" />
      <Compile Include="Assets\MainMenu.cs" />
+     <Compile Include="Assets\Node.cs" />
+     <Compile Include="Assets\PathFollow.cs" />
      <Compile Include="Assets\RepeatBG.cs" />
      <Compile Include="Assets\ScrollingBG.cs" />
      <Compile Include="Assets\SettingsMenu.cs" />
