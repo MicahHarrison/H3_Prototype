@@ -10,7 +10,6 @@ public class MainMenu : MonoBehaviour {
     // Use this for initialization
     public void Play () {
         StartCoroutine(LoadScene());
-        
 	}
 
     IEnumerator LoadScene()
@@ -39,7 +38,7 @@ public class MainMenu : MonoBehaviour {
     {
         transitionAnim.SetTrigger("end");
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene("Menu");
     }
 
 }

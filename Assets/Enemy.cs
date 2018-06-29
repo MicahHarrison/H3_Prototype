@@ -16,14 +16,14 @@ public class Enemy : MonoBehaviour {
     protected Animator anim;
     private Transform groundCheck;
     private bool onGround;
-    private bool facingRight = true;
+    protected bool facingRight = true;
     private Transform target;
     protected bool isDead = false;
     private float zForce;
     private bool damaged = false;
     private float damageTimer;
     private float walkTimer;
-    public float nextAttack;
+    private float nextAttack;
 
 
     // Use this for initialization

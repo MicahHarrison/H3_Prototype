@@ -51,11 +51,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Attack.cs" />
+     <Compile Include="Assets\Boomerang.cs" />
+     <Compile Include="Assets\Boss.cs" />
+     <Compile Include="Assets\CameraFollow.cs" />
+     <Compile Include="Assets\DestroyByTime.cs" />
+     <Compile Include="Assets\Dialogue.cs" />
+     <Compile Include="Assets\DialogueManager.cs" />
+     <Compile Include="Assets\DialogueTrigger.cs" />
      <Compile Include="Assets\DontDestroy.cs" />
+     <Compile Include="Assets\Enemy.cs" />
+     <Compile Include="Assets\EnemySpawn.cs" />
      <Compile Include="Assets\Fading.cs" />
      <Compile Include="Assets\MainMenu.cs" />
      <Compile Include="Assets\Node.cs" />
      <Compile Include="Assets\PathFollow.cs" />
+     <Compile Include="Assets\Player.cs" />
      <Compile Include="Assets\RepeatBG.cs" />
      <Compile Include="Assets\ScrollingBG.cs" />
      <Compile Include="Assets\SettingsMenu.cs" />
@@ -102,6 +113,7 @@
      <Compile Include="Assets\Tilemap\Tiles\Rule Tile\Scripts\RuleTile.cs" />
      <Compile Include="Assets\Tilemap\Tiles\Terrain Tile\Scripts\TerrainTile.cs" />
      <Compile Include="Assets\Tilemap\Tiles\Weighted Random Tile\WeightedRandomTile.cs" />
+     <Compile Include="Assets\UIManager.cs" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
      <None Include="Assets\Tilemap\Brushes\Tint Brush Smooth\Shaders\TintedTilemap.shader" />

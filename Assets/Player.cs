@@ -10,6 +10,7 @@ public class Player : MonoBehaviour {
     public int maxHealth = 10;
     public string playerName;
     public Sprite playerImage;
+    public AudioClip colllisionSound, jumpSound, healthItem;
 
     private int currentHealth;
     private float currentSpeed;
@@ -20,11 +21,15 @@ public class Player : MonoBehaviour {
     private bool isDead = false;
     private bool facingRight = true;
     private bool jump = false;
+    private AudioSource audioS;
+    private SoundManager soundM;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        audioS = GetComponent<AudioSource>();
+        soundM = FindObjectOfType<SoundManager>();
         groundCheck = gameObject.transform.Find("GroundCheck");
         currentSpeed = maxSpeed;
         currentHealth = maxHealth;
@@ -66,6 +71,7 @@ public class Player : MonoBehaviour {
             }
             if (jump)
             {
+                soundM.PlaySingle(jumpSound);
                 jump = false;
                 rb.AddForce(Vector3.up * jumpForce);
             }
@@ -102,5 +108,6 @@ public class Player : MonoBehaviour {
             FindObjectOfType<UIManager>().UpdateHealth(currentHealth);
         }
     }
+
 
 }

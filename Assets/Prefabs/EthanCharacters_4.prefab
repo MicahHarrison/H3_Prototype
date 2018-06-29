@@ -179,6 +179,9 @@ MonoBehaviour:
   maxHealth: 10
   playerName: Adam
   playerImage: {fileID: 21300432, guid: eb424f37766c38a48882d5a683909e74, type: 3}
+  colllisionSound: {fileID: 0}
+  jumpSound: {fileID: 8300000, guid: 361cc9ed88916264ba72c5073128e75b, type: 3}
+  healthItem: {fileID: 0}
 --- !u!136 &136773022159549996
 CapsuleCollider:
   m_ObjectHideFlags: 1
