@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class StartUp : MonoBehaviour {
 
@@ -11,7 +12,7 @@ public class StartUp : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (GameControl.instance.isSave())
+		if (GameControl.instance.isSave() && GameControl.instance.pastintro)
         {
             Debug.Log(Application.persistentDataPath + "/playerinfo.dat");
             NewGameTop.SetActive(true);

@@ -8,10 +8,20 @@ using System.IO;
 using UnityEngine.SceneManagement;
 
 public class GameControl : MonoBehaviour {
+    //player prefs
+    public int reswidth;
+    public int resheight;
+    public bool fullScreen;
+    public float volume;
+    public int quality;
+    public static GameControl instance = null;     //Allows other scripts to call functions from GameControl. 
 
+    //player stats
     public int maxhealth;
     public float currency;
-    public static GameControl instance = null;     //Allows other scripts to call functions from GameControl.       
+
+    //player progress
+    public bool pastintro;
 
 
     // Use this for initialization
@@ -38,8 +48,17 @@ public class GameControl : MonoBehaviour {
         FileStream file = File.Create(Application.persistentDataPath + "/playerinfo.dat");
 
         PlayerData data = new PlayerData();
+        data.reswidth = reswidth;
+        data.resheight = resheight;
+        data.fullScreen = fullScreen;
+        data.volume = volume;
+        data.quality = quality;
+
         data.maxhealth = maxhealth;
         data.currency = currency;
+
+        data.pastintro = pastintro;
+
 
         bf.Serialize(file, data);
         file.Close();
@@ -55,9 +74,17 @@ public class GameControl : MonoBehaviour {
 
             PlayerData data = (PlayerData) bf.Deserialize(file);
             file.Close();
+            reswidth = data.reswidth;
+            resheight = data.resheight;
+            fullScreen = data.fullScreen;
+            volume = data.volume;
+            quality = data.quality;
 
             maxhealth = data.maxhealth;
             currency = data.currency;
+
+            pastintro = data.pastintro;
+
         }
     }
 
@@ -114,8 +141,14 @@ public class GameControl : MonoBehaviour {
 [Serializable]
 class PlayerData
 {
+    public int reswidth;
+    public int resheight;
+    public bool fullScreen;
+    public float volume;
+    public int quality;
+
     public int maxhealth;
     public float currency;
 
-
+    public bool pastintro;
 }

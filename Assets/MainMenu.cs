@@ -10,6 +10,14 @@ public class MainMenu : MonoBehaviour {
     public void NextScene () {
         GameControl.instance.NextScene();
     }
+
+    public void NewGame()
+    {
+        Debug.Log("firstnewgame");
+        GameControl.instance.pastintro = true;
+        GameControl.instance.Save();
+    }
+
     public void Play()
     {
         GameControl.instance.Play();
