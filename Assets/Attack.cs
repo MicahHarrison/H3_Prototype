@@ -22,6 +22,7 @@ public class Attack : MonoBehaviour {
         Player player = other.GetComponent<Player>();
         if (enemy != null)
         {
+            GameControl.instance.currency += 10;
             enemy.TookDamage(damage);
         }
         if (player != null)

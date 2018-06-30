@@ -40,7 +40,7 @@ public class Boss : Enemy {
     void LoadScene()
     {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("World Map");
     }
 	
 }

@@ -5,40 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
-    public Animator transitionAnim;
 
     // Use this for initialization
-    public void Play () {
-        StartCoroutine(LoadScene());
-	}
-
-    IEnumerator LoadScene()
+    public void NextScene () {
+        GameControl.instance.NextScene();
+    }
+    public void Play()
     {
-        transitionAnim.SetTrigger("end");
-        Debug.Log("end");
-        yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        transitionAnim.ResetTrigger("end");
+        GameControl.instance.Play();
     }
 
     // Exits Game
     public void Quit()
     {
-        Debug.Log("QUIT");
-        Application.Quit();
+        GameControl.instance.Quit();
     }
-    // Exits Game
+    // goes back a scene
     public void Back()
     {
-        StartCoroutine(BackLoadScene());
+        GameControl.instance.Back();
 
-    }
-
-    IEnumerator BackLoadScene()
-    {
-        transitionAnim.SetTrigger("end");
-        yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("Menu");
     }
 
 }

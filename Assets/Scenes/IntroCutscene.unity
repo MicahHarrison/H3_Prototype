@@ -791,6 +791,53 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1001 &675673764
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4861271237139034, guid: dfe375386bcb6e445a6709d29e57441a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 503.44806
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861271237139034, guid: dfe375386bcb6e445a6709d29e57441a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 305.71402
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861271237139034, guid: dfe375386bcb6e445a6709d29e57441a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 9.418724
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861271237139034, guid: dfe375386bcb6e445a6709d29e57441a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861271237139034, guid: dfe375386bcb6e445a6709d29e57441a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861271237139034, guid: dfe375386bcb6e445a6709d29e57441a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861271237139034, guid: dfe375386bcb6e445a6709d29e57441a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861271237139034, guid: dfe375386bcb6e445a6709d29e57441a, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 82913671333433750, guid: dfe375386bcb6e445a6709d29e57441a,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 15014caab6a70bd439091ed93942d8d0, type: 3}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: dfe375386bcb6e445a6709d29e57441a, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &687668463
 GameObject:
   m_ObjectHideFlags: 0

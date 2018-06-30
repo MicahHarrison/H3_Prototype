@@ -23,16 +23,15 @@ public class Player : MonoBehaviour {
     private bool jump = false;
     private AudioSource audioS;
     private SoundManager soundM;
-
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         audioS = GetComponent<AudioSource>();
-        soundM = FindObjectOfType<SoundManager>();
+        soundM = SoundManager.instance;
         groundCheck = gameObject.transform.Find("GroundCheck");
         currentSpeed = maxSpeed;
-        currentHealth = maxHealth;
+        currentHealth = GameControl.instance.maxhealth;
 	}
 	
 	// Update is called once per frame
