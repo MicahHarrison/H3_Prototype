@@ -18,10 +18,20 @@ public class GameControl : MonoBehaviour {
 
     //player stats
     public int maxhealth;
+    public int maxfupa;
+    public int currenthealth;
+    public int healthlvl = 1;
+    public int currentfupa;
+    public int fupalvl = 1;
     public float currency;
 
     //player progress
     public bool pastintro;
+    public Vector3 playerposition = new Vector3(-7, 3, -4);
+
+    // max stats
+    public int maxhealthlvl = 5;
+    public int maxfupalvl = 5;
 
 
     // Use this for initialization
@@ -55,6 +65,10 @@ public class GameControl : MonoBehaviour {
         data.quality = quality;
 
         data.maxhealth = maxhealth;
+        data.healthlvl = healthlvl;
+        data.maxfupa = maxfupa;
+
+        data.fupalvl = fupalvl;
         data.currency = currency;
 
         data.pastintro = pastintro;
@@ -81,8 +95,13 @@ public class GameControl : MonoBehaviour {
             quality = data.quality;
 
             maxhealth = data.maxhealth;
+            currenthealth = data.maxhealth;
+            healthlvl = data.healthlvl;
+            maxfupa = data.maxfupa;
+            currentfupa = data.maxfupa;
+            fupalvl = data.fupalvl;
             currency = data.currency;
-
+        
             pastintro = data.pastintro;
 
         }
@@ -123,7 +142,7 @@ public class GameControl : MonoBehaviour {
         Debug.Log("QUIT");
         Application.Quit();
     }
-    // Exits Game
+    // back to menu
     public void Back()
     {
         StartCoroutine(BackLoadScene());
@@ -134,6 +153,17 @@ public class GameControl : MonoBehaviour {
     {
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Menu");
+    }
+    public void Prev()
+    {
+        StartCoroutine(PrevLoadScene());
+
+    }
+
+    IEnumerator PrevLoadScene()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
 
@@ -148,6 +178,9 @@ class PlayerData
     public int quality;
 
     public int maxhealth;
+    public int maxfupa;
+    public int healthlvl;
+    public int fupalvl;
     public float currency;
 
     public bool pastintro;

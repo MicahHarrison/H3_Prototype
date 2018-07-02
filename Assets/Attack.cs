@@ -23,7 +23,7 @@ public class Attack : MonoBehaviour {
         if (enemy != null)
         {
             GameControl.instance.currency += 10;
-            enemy.TookDamage(damage);
+            enemy.TookDamage(GameControl.instance.currentfupa);
         }
         if (player != null)
         {

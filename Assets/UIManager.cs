@@ -18,8 +18,8 @@ public class UIManager : MonoBehaviour {
         player = FindObjectOfType<Player>();
         if (player != null)
         {
-            heathUI.maxValue = player.maxHealth;
-            heathUI.value = heathUI.maxValue;
+            heathUI.maxValue = GameControl.instance.maxhealth;
+            heathUI.value = GameControl.instance.currenthealth;
             playerName.text = player.playerName;
             playerImage.sprite = player.playerImage;
         }

@@ -7,12 +7,13 @@ public class Player : MonoBehaviour {
     public float maxSpeed = 4;
     public float jumpForce = 400;
     public float minHeight, maxHeight;
-    public int maxHealth = 10;
+    public int maxHealth;
     public string playerName;
     public Sprite playerImage;
     public AudioClip colllisionSound, jumpSound, healthItem;
 
     private int currentHealth;
+    private int currentFupa;
     private float currentSpeed;
     private Rigidbody rb;
     private Animator anim;
@@ -31,11 +32,16 @@ public class Player : MonoBehaviour {
         soundM = SoundManager.instance;
         groundCheck = gameObject.transform.Find("GroundCheck");
         currentSpeed = maxSpeed;
-        currentHealth = GameControl.instance.maxhealth;
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        currentHealth = GameControl.instance.currenthealth;
+        currentFupa = GameControl.instance.currentfupa;
+        Debug.Log(GameControl.instance.playerposition);
+        Debug.Log("LOADED PLAYER");
+        transform.position = GameControl.instance.playerposition;
+        
+    }
+
+// Update is called once per frame
+void Update () {
         onGround = Physics.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
         anim.SetBool("OnGround", onGround);
         anim.SetBool("Dead", isDead);
@@ -103,6 +109,7 @@ public class Player : MonoBehaviour {
         if (!isDead)
         {
             currentHealth -= damage;
+            GameControl.instance.currenthealth = currentHealth;
             anim.SetTrigger("HitDamage");
             FindObjectOfType<UIManager>().UpdateHealth(currentHealth);
         }

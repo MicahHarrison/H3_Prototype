@@ -4048,8 +4048,16 @@ MonoBehaviour:
   volume: 0
   quality: 0
   maxhealth: 10
+  maxfupa: 1
+  currenthealth: 10
+  healthlvl: 1
+  currentfupa: 1
+  fupalvl: 1
   currency: 0
   pastintro: 0
+  playerposition: {x: -7, y: 3, z: -4}
+  maxhealthlvl: 5
+  maxfupalvl: 5
 --- !u!114 &1082815945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6595,6 +6603,21 @@ Prefab:
         type: 2}
       propertyPath: transitionAnim
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114817219251357608, guid: 2d0876c4eba986b4e9d9255cb3d6c7b5,
+        type: 2}
+      propertyPath: currentfupa
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114817219251357608, guid: 2d0876c4eba986b4e9d9255cb3d6c7b5,
+        type: 2}
+      propertyPath: maxfupa
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114817219251357608, guid: 2d0876c4eba986b4e9d9255cb3d6c7b5,
+        type: 2}
+      propertyPath: currenthealth
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2d0876c4eba986b4e9d9255cb3d6c7b5, type: 2}

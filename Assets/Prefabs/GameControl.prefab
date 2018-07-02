@@ -41,8 +41,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38e710b5fb7934a4e98bfae93e9c71bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reswidth: 0
+  resheight: 0
+  fullScreen: 0
+  volume: 0
+  quality: 0
   maxhealth: 10
-  currency: 4000
+  maxfupa: 10
+  currenthealth: 8
+  healthlvl: 1
+  currentfupa: 8
+  fupalvl: 10
+  currency: 2000
+  pastintro: 0
+  playerposition: {x: -7, y: 3, z: -4}
+  player: {fileID: 114796945771513896, guid: 4a932ce570b8e3a4ab19bf0950dc295f, type: 2}
+  maxhealthlvl: 5
+  maxfupalvl: 5
 --- !u!114 &114066065917814348
 MonoBehaviour:
   m_ObjectHideFlags: 1
