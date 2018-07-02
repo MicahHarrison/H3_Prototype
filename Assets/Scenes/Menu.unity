@@ -2380,6 +2380,12 @@ Prefab:
       propertyPath: efxSource
       value: 
       objectReference: {fileID: 486680281}
+    - target: {fileID: 114341604778234440, guid: dfe375386bcb6e445a6709d29e57441a,
+        type: 2}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 24100000, guid: 77ee73574e5814e46806e7b6a77b0642,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dfe375386bcb6e445a6709d29e57441a, type: 2}
   m_IsPrefabParent: 0

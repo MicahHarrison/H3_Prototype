@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.Audio;
 using System.Collections;
 using System.Collections.Generic;
 
 public class SoundManager : MonoBehaviour
 {
+    public AudioMixer audio;
     public AudioSource efxSource;                   //Drag a reference to the audio source which will play the sound effects.
     public AudioSource musicSource;                 //Drag a reference to the audio source which will play the music.
     public static SoundManager instance = null;     //Allows other scripts to call functions from SoundManager.             
@@ -65,5 +67,11 @@ public class SoundManager : MonoBehaviour
 
         //Play the clip.
         efxSource.Play();
+    }
+    public void SetVolume(float volume)
+    {
+        Debug.Log(volume);
+        GameControl.instance.volume = volume;
+        audio.SetFloat("volume", volume);
     }
 }
