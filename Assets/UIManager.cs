@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour {
             heathUI.value = GameControl.instance.currenthealth;
             playerName.text = player.playerName;
             playerImage.sprite = player.playerImage;
+            UpdateLives();
         }
         if (coins != null)
         {
@@ -37,6 +38,11 @@ public class UIManager : MonoBehaviour {
     public void UpdateHealth(int amount)
     {
         heathUI.value = amount;
+    }
+
+    public void UpdateLives()
+    {
+        lives.text = "x " + GameControl.instance.lives;
     }
 
     public void Save()

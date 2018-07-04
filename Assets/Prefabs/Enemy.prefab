@@ -178,6 +178,8 @@ MonoBehaviour:
   damageTime: 0.5
   maxHealth: 4
   attackRate: 1
+  colllisionSound: {fileID: 8300000, guid: 2876e7fa4419a4a7096b8bb38641daa3, type: 3}
+  death: {fileID: 8300000, guid: 9ab7ac9f6e729457d8a8dfa89151ee30, type: 3}
 --- !u!136 &136955418097324840
 CapsuleCollider:
   m_ObjectHideFlags: 1

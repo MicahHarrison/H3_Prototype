@@ -9,6 +9,9 @@ public class Enemy : MonoBehaviour {
     public float damageTime = .5f;
     public float maxHealth;
     public float attackRate = 1f;
+    public GameObject[] coins;
+    public float numcoins = 5;
+
 
     private float currentHealth;
     private float currentSpeed;
@@ -24,6 +27,9 @@ public class Enemy : MonoBehaviour {
     private float damageTimer;
     private float walkTimer;
     private float nextAttack;
+    private SoundManager soundM;
+    public AudioClip colllisionSound, death;
+    private int currentcoins;
 
 
     // Use this for initialization
@@ -34,6 +40,7 @@ public class Enemy : MonoBehaviour {
         currentSpeed = maxSpeed;
         target = FindObjectOfType<Player>().transform;
         currentHealth = maxHealth;
+        soundM = SoundManager.instance;
     }
 	
 	// Update is called once per frame
@@ -100,9 +107,12 @@ public class Enemy : MonoBehaviour {
             damaged = true;
             currentHealth -= damage;
             anim.SetTrigger("HitDamage");
+            soundM.PlaySingle(colllisionSound);
             if (currentHealth <= 0) { 
                 isDead = true;
+                soundM.PlaySingle(death);
                 rb.AddRelativeForce(new Vector3(3, 5, -1), ForceMode.Impulse);
+                SpawnCoins();
             }
 
         }
@@ -120,5 +130,17 @@ public class Enemy : MonoBehaviour {
     void ResetSpeed()
     {
         currentSpeed = maxSpeed;
+    }
+
+    void SpawnCoins()
+    {
+        Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        GameObject coin = Instantiate(coins[Random.Range(0, coins.Length)], spawnPosition, Quaternion.identity);
+        coin.rigidbody.AddRelativeForce(new Vector3(Random.Range(0, 2), Random.Range(0, 2), Random.Range(0, 2)), ForceMode.Impulse);
+        currentcoins++;
+        if (currentEnemies < numberOfEnemies)
+        {
+            Invoke("SpawnCoins", 0);
+        }
     }
 }

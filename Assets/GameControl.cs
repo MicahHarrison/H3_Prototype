@@ -17,13 +17,14 @@ public class GameControl : MonoBehaviour {
     public static GameControl instance = null;     //Allows other scripts to call functions from GameControl. 
 
     //player stats
+    public int lives = 3;
     public int maxhealth;
     public int maxfupa;
     public int currenthealth;
     public int healthlvl = 1;
     public int currentfupa;
     public int fupalvl = 1;
-    public float currency;
+    public float currency = 0;
 
     //player progress
     public bool pastintro;
@@ -51,6 +52,22 @@ public class GameControl : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
     }
 	
+    public void NewGame()
+    {
+        File.Delete(Application.persistentDataPath + "/playerinfo.dat");
+        if (isSave())
+        {
+            Debug.Log("not deleted");
+        }else
+        {
+            Debug.Log("deleted");
+        }
+        currency = 0;
+        lives = 3;
+        Save();
+        Load();
+    }
+
     public void Save()
     {
         BinaryFormatter bf = new BinaryFormatter();
@@ -64,6 +81,7 @@ public class GameControl : MonoBehaviour {
         data.volume = volume;
         data.quality = quality;
 
+        data.lives = lives;
         data.maxhealth = maxhealth;
         data.healthlvl = healthlvl;
         data.maxfupa = maxfupa;
@@ -94,6 +112,7 @@ public class GameControl : MonoBehaviour {
             volume = data.volume;
             quality = data.quality;
 
+            lives = data.lives;
             maxhealth = data.maxhealth;
             currenthealth = data.maxhealth;
             healthlvl = data.healthlvl;
@@ -126,13 +145,13 @@ public class GameControl : MonoBehaviour {
     {
       
         Debug.Log("end");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     IEnumerator LoadMap()
     {
         Debug.Log("end");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.5f);
         SceneManager.LoadScene("World Map");
     }
 
@@ -151,7 +170,7 @@ public class GameControl : MonoBehaviour {
 
     IEnumerator BackLoadScene()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.5f);
         SceneManager.LoadScene("Menu");
     }
     public void Prev()
@@ -162,7 +181,7 @@ public class GameControl : MonoBehaviour {
 
     IEnumerator PrevLoadScene()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
@@ -177,6 +196,7 @@ class PlayerData
     public float volume;
     public int quality;
 
+    public int lives;
     public int maxhealth;
     public int maxfupa;
     public int healthlvl;

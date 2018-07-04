@@ -23,11 +23,14 @@ public class Store : MonoBehaviour {
     public int fupafillcost;
     [TextArea(3, 10)]
     public string[] sentences;
+    private SoundManager soundM;
+    public AudioClip selectsound, buysound;
 
     private int item;
 
     // Use this for initialization
     void Start () {
+        soundM = SoundManager.instance;
         maxhealth.text = "Max Health: " + GameControl.instance.maxhealth;
         maxfupa.text = "Max Fupa: " + GameControl.instance.maxfupa;
         currenthealth.text = "Current Health: " + GameControl.instance.currenthealth;
@@ -42,21 +45,25 @@ public class Store : MonoBehaviour {
 
     public void HealthUp()
     {
+        soundM.PlaySingle(selectsound);
         itemdescription.text = sentences[0];
         item = 0;    
     }
     public void FupaUp()
     {
+        soundM.PlaySingle(selectsound);
         itemdescription.text = sentences[1];       
         item = 1;               
     }
     public void HealthFill ()
     {
+        soundM.PlaySingle(selectsound);
         itemdescription.text = sentences[2];        
         item = 2;        
     }
     public void FupaFill()
     {
+        soundM.PlaySingle(selectsound);
         itemdescription.text = sentences[3];
         item = 3;
     }
@@ -70,6 +77,7 @@ public class Store : MonoBehaviour {
                 {
                     if (GameControl.instance.currency >= (healthlvlcost * GameControl.instance.healthlvl))
                     {
+                        soundM.PlaySingle(buysound);
                         GameControl.instance.currency -= healthlvlcost * GameControl.instance.healthlvl;
                         currency.text = "" + GameControl.instance.currency;
                         GameControl.instance.healthlvl += 1;
@@ -93,6 +101,7 @@ public class Store : MonoBehaviour {
                 {
                     if (GameControl.instance.currency >= (fupalvlcost * GameControl.instance.fupalvl))
                     {
+                        soundM.PlaySingle(buysound);
                         GameControl.instance.currency -= fupalvlcost * GameControl.instance.fupalvl;
                         currency.text = "" + GameControl.instance.currency;
                         GameControl.instance.fupalvl += 1;
@@ -120,6 +129,7 @@ public class Store : MonoBehaviour {
                 {
                     if (GameControl.instance.currency >= healthfillcost)
                     {
+                        soundM.PlaySingle(buysound);
                         GameControl.instance.currency -= healthfillcost;
                         currency.text = "" + GameControl.instance.currency;
                         GameControl.instance.currenthealth = GameControl.instance.maxhealth;
@@ -142,6 +152,7 @@ public class Store : MonoBehaviour {
                 {
                     if (GameControl.instance.currency >= fupafillcost)
                     {
+                        soundM.PlaySingle(buysound);
                         GameControl.instance.currency -= fupafillcost;
                         currency.text = "" + GameControl.instance.currency;
                         GameControl.instance.currentfupa = GameControl.instance.maxfupa;

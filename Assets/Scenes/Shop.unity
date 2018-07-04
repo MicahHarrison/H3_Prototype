@@ -746,8 +746,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.75, y: 49.45}
-  m_SizeDelta: {x: -49.14, y: -131.38}
+  m_AnchoredPosition: {x: -7.0202, y: 49.46}
+  m_SizeDelta: {x: -38.6, y: -131.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &355254973
 CanvasRenderer:
@@ -1590,8 +1590,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.75, y: 23.86}
-  m_SizeDelta: {x: -49.139984, y: -131.38}
+  m_AnchoredPosition: {x: -7.0202, y: 23.87}
+  m_SizeDelta: {x: -38.6, y: -131.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1100598792
 CanvasRenderer:
@@ -1739,8 +1739,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.7500153, y: -1.7300034}
-  m_SizeDelta: {x: -49.139984, y: -131.38}
+  m_AnchoredPosition: {x: -7.02, y: -1.72}
+  m_SizeDelta: {x: -38.6, y: -131.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1158027925
 CanvasRenderer:
@@ -1781,6 +1781,12 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Max Health:'
+--- !u!114 &1185405583 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114341604778234440, guid: dfe375386bcb6e445a6709d29e57441a,
+    type: 2}
+  m_PrefabInternal: {fileID: 547611406}
+  m_Script: {fileID: 11500000, guid: 9e43531cd6964784c8e8a77e72015e8d, type: 3}
 --- !u!1 &1292577439
 GameObject:
   m_ObjectHideFlags: 0
@@ -1893,12 +1899,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1498369635}
-        m_MethodName: HealthUp
-        m_Mode: 1
+      - m_Target: {fileID: 1185405583}
+        m_MethodName: PlaySingle
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 8300000, guid: 6a80078f6fc6a42dfb959e3447ed72e3,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2555,6 +2562,8 @@ MonoBehaviour:
   - Raises max Fupa Power
   - Fill Health
   - Fill Fupa Power
+  selectsound: {fileID: 8300000, guid: 6a80078f6fc6a42dfb959e3447ed72e3, type: 3}
+  buysound: {fileID: 8300000, guid: 9fe330231cc2d4a01aa086aba00b09fd, type: 3}
 --- !u!1 &1593749619
 GameObject:
   m_ObjectHideFlags: 0
@@ -3333,8 +3342,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.7500153, y: -26.070015}
-  m_SizeDelta: {x: -49.139984, y: -131.38}
+  m_AnchoredPosition: {x: -7.0201, y: -26.06}
+  m_SizeDelta: {x: -38.6, y: -131.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2055355744
 CanvasRenderer:

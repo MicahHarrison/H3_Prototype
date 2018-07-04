@@ -53,10 +53,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 77ee73574e5814e46806e7b6a77b0642,
     type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -245,6 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e43531cd6964784c8e8a77e72015e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audio: {fileID: 0}
   efxSource: {fileID: 82726073481594952}
   musicSource: {fileID: 82913671333433750}
   lowPitchRange: 0.95

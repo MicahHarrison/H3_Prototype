@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
+    private SoundManager soundM;
+    public AudioClip selectsound;
 
     // Use this for initialization
     public void NextScene () {
@@ -13,6 +15,7 @@ public class MainMenu : MonoBehaviour {
 
     public void NewGame()
     {
+        GameControl.instance.NewGame();
         Debug.Log("firstnewgame");
         GameControl.instance.pastintro = true;
         GameControl.instance.Save();
@@ -21,6 +24,10 @@ public class MainMenu : MonoBehaviour {
     public void Play()
     {
         GameControl.instance.Play();
+    }
+    public void SelectSound()
+    {
+        SoundManager.instance.PlaySingle(selectsound);
     }
 
     // Exits Game

@@ -34,6 +34,7 @@ public class Boss : Enemy {
 
     void BossDefeated()
     {
+        SoundManager.instance.musicSource.Stop();
         Invoke("LoadScene", 8f);
 
     }
