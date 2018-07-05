@@ -10,7 +10,9 @@ public class Enemy : MonoBehaviour {
     public float maxHealth;
     public float attackRate = 1f;
     public GameObject[] coins;
-    public float numcoins = 5;
+    public int numcoinsmax = 4;
+    public int numcoinsmin = 0;
+    public int numcoins;
 
 
     private float currentHealth;
@@ -34,6 +36,7 @@ public class Enemy : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        numcoins = Random.Range(numcoinsmin, numcoinsmax);
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         groundCheck = gameObject.transform.Find("GroundCheck");
@@ -120,7 +123,8 @@ public class Enemy : MonoBehaviour {
 
     public void DisableEnemy()
     {
-        gameObject.SetActive(false);
+        Destroy(gameObject);
+        //gameObject.SetActive(false);
     }
 
     void ZeroSpeed()
@@ -136,9 +140,10 @@ public class Enemy : MonoBehaviour {
     {
         Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         GameObject coin = Instantiate(coins[Random.Range(0, coins.Length)], spawnPosition, Quaternion.identity);
-        coin.rigidbody.AddRelativeForce(new Vector3(Random.Range(0, 2), Random.Range(0, 2), Random.Range(0, 2)), ForceMode.Impulse);
+        coin.SetActive(true);
+        coin.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(Random.Range(-1, 3), Random.Range(4, 10), Random.Range(-2, 2)), ForceMode.Impulse);
         currentcoins++;
-        if (currentEnemies < numberOfEnemies)
+        if (currentcoins < numcoins)
         {
             Invoke("SpawnCoins", 0);
         }

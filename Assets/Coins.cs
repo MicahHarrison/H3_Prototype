@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class Coins : MonoBehaviour {
 
-    public int coinvalue;
+    public int[] coinvalue;
+    public AudioClip coinsound;
+
+    private float rotation;
 
 	// Use this for initialization
-	void Start () {
-		
-	}
+	void Awake () {
+        rotation = Random.Range(0.2f, 0.7f);
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		
+        transform.Rotate(0, rotation, 0, Space.World);
 	}
 
     private void OnTriggerEnter(Collider other)
@@ -22,7 +25,9 @@ public class Coins : MonoBehaviour {
         if (player != null)
         {
             Debug.Log("MONIES");
-            GameControl.instance.currency += coinvalue;
+            GameControl.instance.currency += coinvalue[Random.Range(0, coinvalue.Length)];
+            Destroy(gameObject);
+            SoundManager.instance.PlaySingle(coinsound);
         }
     }
 }

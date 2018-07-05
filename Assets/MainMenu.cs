@@ -23,7 +23,8 @@ public class MainMenu : MonoBehaviour {
 
     public void Play()
     {
-        GameControl.instance.Play();
+        Transition.instance.FadeToLevel("World Map");
+        //GameControl.instance.Play();
     }
     public void SelectSound()
     {

@@ -7,6 +7,7 @@ TagManager:
   - Menu
   - music
   - Health Item
+  - FupaCoin
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Player Hit
   - Enemy
   - Enemy Hit
-  - 
+  - Coin
   - 
   - 
   - 
