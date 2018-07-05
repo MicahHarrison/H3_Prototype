@@ -24,15 +24,20 @@ public class Transition : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
     }
 
+    // Update is called once per frame
+    void Update () {
+
+	}
 
     public void FadeToLevel(string level)
     {
         scene = level;
-        animator.SetTrigger("FadeOut");
+        animator.SetBool("Fade", true);
     }
 
     public void OnFadeComplete()
     {
+        animator.SetBool("Fade", false);
         SceneManager.LoadScene(scene);
     }
 }

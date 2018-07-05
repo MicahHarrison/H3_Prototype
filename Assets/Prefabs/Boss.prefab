@@ -166,9 +166,14 @@ MonoBehaviour:
   damageTime: 0.2
   maxHealth: 5
   attackRate: 2
+  coins: []
+  numcoinsmax: 4
+  numcoinsmin: 0
+  numcoins: 0
   colllisionSound: {fileID: 8300000, guid: 34b722ffc09ef4831a89b6502cd42f7e, type: 3}
   death: {fileID: 8300000, guid: 524fb3698f9864ea4a953e57aefc11ad, type: 3}
   boomerang: {fileID: 1948639894681394, guid: b6ce13582350f2b4fb4d61a4e3d2ef5f, type: 2}
+  nextscene: World Map
   minBoomerangTime: 8
   maxBoomerangTime: 12
 --- !u!114 &114757907279535392

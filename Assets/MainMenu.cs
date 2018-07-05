@@ -6,12 +6,8 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour {
 
     private SoundManager soundM;
+    private string lastscene;
     public AudioClip selectsound;
-
-    // Use this for initialization
-    public void NextScene () {
-        GameControl.instance.NextScene();
-    }
 
     public void NewGame()
     {
@@ -21,9 +17,10 @@ public class MainMenu : MonoBehaviour {
         GameControl.instance.Save();
     }
 
-    public void Play()
+    public void Play(string level)
     {
-        Transition.instance.FadeToLevel("World Map");
+        Debug.Log(level);
+        Transition.instance.FadeToLevel(level);
         //GameControl.instance.Play();
     }
     public void SelectSound()
@@ -35,12 +32,6 @@ public class MainMenu : MonoBehaviour {
     public void Quit()
     {
         GameControl.instance.Quit();
-    }
-    // goes back a scene
-    public void Back()
-    {
-        GameControl.instance.Back();
-
     }
 
 }

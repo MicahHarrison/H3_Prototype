@@ -460,7 +460,7 @@ AnimationClip:
   m_Events:
   - time: 1.8333334
     functionName: Play
-    data: 
+    data: World Map
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

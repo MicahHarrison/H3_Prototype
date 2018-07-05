@@ -174,8 +174,8 @@ public class Store : MonoBehaviour {
                 break;// code to be executed if n doesn't match any cases
         }
     }
-    public void Back()
+    public void Back(string level)
     {
-        GameControl.instance.Prev();
+        Transition.instance.FadeToLevel(level);
     }
 }

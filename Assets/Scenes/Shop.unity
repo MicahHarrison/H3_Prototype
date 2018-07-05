@@ -1137,6 +1137,111 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5c9f4ac5b6c103468f6cc826574ce7a, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &709630755
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 224821717104435556, guid: 7a945769a82252644b55e39d0fb96458,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 224821717104435556, guid: 7a945769a82252644b55e39d0fb96458,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224821717104435556, guid: 7a945769a82252644b55e39d0fb96458,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224821717104435556, guid: 7a945769a82252644b55e39d0fb96458,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224821717104435556, guid: 7a945769a82252644b55e39d0fb96458,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224821717104435556, guid: 7a945769a82252644b55e39d0fb96458,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224821717104435556, guid: 7a945769a82252644b55e39d0fb96458,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224821717104435556, guid: 7a945769a82252644b55e39d0fb96458,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224821717104435556, guid: 7a945769a82252644b55e39d0fb96458,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 224821717104435556, guid: 7a945769a82252644b55e39d0fb96458,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224821717104435556, guid: 7a945769a82252644b55e39d0fb96458,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224821717104435556, guid: 7a945769a82252644b55e39d0fb96458,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224821717104435556, guid: 7a945769a82252644b55e39d0fb96458,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224821717104435556, guid: 7a945769a82252644b55e39d0fb96458,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224821717104435556, guid: 7a945769a82252644b55e39d0fb96458,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224821717104435556, guid: 7a945769a82252644b55e39d0fb96458,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224821717104435556, guid: 7a945769a82252644b55e39d0fb96458,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224821717104435556, guid: 7a945769a82252644b55e39d0fb96458,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224821717104435556, guid: 7a945769a82252644b55e39d0fb96458,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 7a945769a82252644b55e39d0fb96458, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &715598300
 GameObject:
   m_ObjectHideFlags: 0
@@ -2642,13 +2747,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1498369635}
         m_MethodName: Back
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 1-1
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,

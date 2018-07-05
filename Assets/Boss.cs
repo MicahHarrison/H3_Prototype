@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Boss : Enemy {
 
     public GameObject boomerang;
+    public string nextscene;
     public float minBoomerangTime, maxBoomerangTime;
 
     // Use this for initialization
@@ -35,13 +36,12 @@ public class Boss : Enemy {
     void BossDefeated()
     {
         SoundManager.instance.musicSource.Stop();
-        Invoke("LoadScene", 8f);
+        Invoke("LoadScene", 6f);
 
     }
     void LoadScene()
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        SceneManager.LoadScene("World Map");
+        Transition.instance.FadeToLevel(nextscene);
     }
-	
+
 }

@@ -11,11 +11,12 @@ public class PauseMenu : MonoBehaviour {
     public Slider volumeS;
     // Use this for initialization
     void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        volumeS.value = GameControl.instance.volume;
+
+    }
+
+    // Update is called once per frame
+    void Update () {
 		if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (IsPaused)

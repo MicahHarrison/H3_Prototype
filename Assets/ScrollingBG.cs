@@ -5,7 +5,7 @@ using UnityEngine;
 public class ScrollingBG : MonoBehaviour {
 
     public Rigidbody2D rb2d;
-    public float scrollSpeed = -1.5f;
+    public float scrollSpeed = -30.5f;
 
 	// Use this for initialization
 	void Start () {

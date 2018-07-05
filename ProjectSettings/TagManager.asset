@@ -8,6 +8,7 @@ TagManager:
   - music
   - Health Item
   - FupaCoin
+  - Fountain
   layers:
   - Default
   - TransparentFX

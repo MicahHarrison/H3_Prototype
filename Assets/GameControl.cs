@@ -18,11 +18,11 @@ public class GameControl : MonoBehaviour {
 
     //player stats
     public int lives = 3;
-    public int maxhealth;
-    public int maxfupa;
-    public int currenthealth;
+    public int maxhealth = 10;
+    public int maxfupa = 3;
+    public int currenthealth = 10;
     public int healthlvl = 1;
-    public int currentfupa;
+    public int currentfupa = 3;
     public int fupalvl = 1;
     public float currency = 0;
 
@@ -131,59 +131,13 @@ public class GameControl : MonoBehaviour {
         return File.Exists(Application.persistentDataPath + "/playerinfo.dat");
     }
 
-    // Use this for initialization
-    public void NextScene()
-    {
-        StartCoroutine(LoadScene());
-    }
-    public void Play()
-    {
-        StartCoroutine(LoadMap());
-    }
-
-    IEnumerator LoadScene()
-    {
-      
-        Debug.Log("end");
-        yield return new WaitForSeconds(.5f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-    IEnumerator LoadMap()
-    {
-        Debug.Log("end");
-        yield return new WaitForSeconds(.5f);
-        SceneManager.LoadScene("World Map");
-    }
-
     // Exits Game
     public void Quit()
     {
         Debug.Log("QUIT");
         Application.Quit();
     }
-    // back to menu
-    public void Back()
-    {
-        StartCoroutine(BackLoadScene());
-
-    }
-
-    IEnumerator BackLoadScene()
-    {
-        yield return new WaitForSeconds(.5f);
-        SceneManager.LoadScene("Menu");
-    }
-    public void Prev()
-    {
-        StartCoroutine(PrevLoadScene());
-
-    }
-
-    IEnumerator PrevLoadScene()
-    {
-        yield return new WaitForSeconds(.5f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-    }
+    
 }
 
 

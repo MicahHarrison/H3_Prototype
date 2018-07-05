@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class StoreTrigger : MonoBehaviour {
 
     public Player player;
+    public string scene;
+    public bool trackposition;
 
 	// Use this for initialization
 	void Start () {
@@ -16,12 +18,13 @@ public class StoreTrigger : MonoBehaviour {
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Shop");
+            Transition.instance.FadeToLevel(scene);
         }
     }
     void Update()
     {
+        if (trackposition) { 
         GameControl.instance.playerposition = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
-
+        }
     }
 }

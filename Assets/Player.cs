@@ -146,6 +146,13 @@ void Update () {
                 FindObjectOfType<UIManager>().UpdateHealth(currentHealth);
             }
         }
+        if (other.CompareTag("Fountain"))
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                soundM.PlayEfx();
+            }
+        }
     }
 
     void PlayerRespawn()

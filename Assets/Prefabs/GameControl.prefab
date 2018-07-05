@@ -46,16 +46,16 @@ MonoBehaviour:
   fullScreen: 0
   volume: 0
   quality: 0
+  lives: 3
   maxhealth: 10
-  maxfupa: 10
-  currenthealth: 8
+  maxfupa: 3
+  currenthealth: 10
   healthlvl: 1
-  currentfupa: 8
-  fupalvl: 10
-  currency: 2000
+  currentfupa: 3
+  fupalvl: 1
+  currency: 0
   pastintro: 0
   playerposition: {x: -7, y: 3, z: -4}
-  player: {fileID: 114796945771513896, guid: 4a932ce570b8e3a4ab19bf0950dc295f, type: 2}
   maxhealthlvl: 5
   maxfupalvl: 5
 --- !u!114 &114066065917814348
