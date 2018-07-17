@@ -9,30 +9,27 @@ public class Bratzo : MonoBehaviour
     public Animator anim;
 
     private bool stare;
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && stare && GameControl.instance.currenthealth != GameControl.instance.maxhealth)
         {
-            stare = true;
-        } else
-        {
-            stare = false;
+            anim.SetTrigger("Stare");
+            SoundManager.instance.PlaySingle(bratz);
+            GameControl.instance.currenthealth = GameControl.instance.maxhealth;
+            StartCoroutine(Heal());
+
         }
     }
-
-    private void OnTriggerStay(Collider other)
+    void OnCollisionEnter(Collision other)
     {
-        if (other.CompareTag("Player"))
-        {
-            if (stare && GameControl.instance.currenthealth != GameControl.instance.maxhealth)
-            {
-                anim.SetTrigger("Stare");
-                SoundManager.instance.PlaySingle(bratz);
-                GameControl.instance.currenthealth = GameControl.instance.maxhealth;
-                StartCoroutine(Heal());
+        Debug.Log(stare);
+        stare = true;
+    }
 
-            }
-        }
+    void OnCollisionExit(Collision other)
+    {
+        stare = false;
     }
 
     IEnumerator Heal()

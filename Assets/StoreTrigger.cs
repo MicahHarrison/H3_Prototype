@@ -24,7 +24,7 @@ public class StoreTrigger : MonoBehaviour {
     void Update()
     {
         if (trackposition) { 
-        GameControl.instance.playerposition = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
+            GameControl.instance.playerposition = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z + 5);
         }
     }
 }

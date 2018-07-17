@@ -166,7 +166,8 @@ MonoBehaviour:
   damageTime: 0.2
   maxHealth: 5
   attackRate: 2
-  coins: []
+  coins:
+  - {fileID: 1877880773458196, guid: df7f47e1feeab324d87c87d57fda23a4, type: 2}
   numcoinsmax: 4
   numcoinsmin: 0
   numcoins: 0

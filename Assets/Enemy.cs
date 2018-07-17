@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour {
     public GameObject[] coins;
     public int numcoinsmax = 4;
     public int numcoinsmin = 0;
-    public int numcoins;
+    private int numcoins;
 
 
     private float currentHealth;
@@ -115,7 +115,6 @@ public class Enemy : MonoBehaviour {
                 isDead = true;
                 soundM.PlaySingle(death);
                 rb.AddRelativeForce(new Vector3(3, 5, -1), ForceMode.Impulse);
-                SpawnCoins();
             }
 
         }
